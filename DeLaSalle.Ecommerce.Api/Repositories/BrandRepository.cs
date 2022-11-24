@@ -2,7 +2,9 @@
 using Dapper.Contrib.Extensions;
 using DeLaSalle.Ecommerce.Api.DataAccess.Interfaces;
 using DeLaSalle.Ecommerce.Api.Repositories.Interfaces;
+using DeLaSalle.Ecommerce.Core.Dto;
 using DeLaSalle.Ecommerce.Core.Entities;
+using System.Xml.Linq;
 
 namespace DeLaSalle.Ecommerce.Api.Repositories
 {

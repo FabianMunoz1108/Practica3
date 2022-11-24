@@ -1,6 +1,6 @@
 ﻿using DeLaSalle.Ecommerce.Api.DataAccess.Interfaces;
-using MySqlConnector;
 using System.Data.Common;
+using MySqlConnector;
 
 namespace DeLaSalle.Ecommerce.Api.DataAccess
 {
