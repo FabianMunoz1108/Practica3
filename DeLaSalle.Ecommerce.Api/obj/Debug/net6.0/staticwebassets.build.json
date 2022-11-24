@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "keR88AR2bkNw5h4d3HWlcSCDBsBDVxokAt3WCKkmN8Y=",
+  "Source": "DeLaSalle.Ecommerce.Api",
+  "BasePath": "_content/DeLaSalle.Ecommerce.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

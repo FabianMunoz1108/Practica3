@@ -1,0 +1,12 @@
+C:\Users\fabian.munoz\source\repos\DeLaSalle.Ecommerce\DeLaSalle.Ecommerce.Core\bin\Debug\net6.0\DeLaSalle.Ecommerce.Core.deps.json
+C:\Users\fabian.munoz\source\repos\DeLaSalle.Ecommerce\DeLaSalle.Ecommerce.Core\bin\Debug\net6.0\DeLaSalle.Ecommerce.Core.dll
+C:\Users\fabian.munoz\source\repos\DeLaSalle.Ecommerce\DeLaSalle.Ecommerce.Core\bin\Debug\net6.0\DeLaSalle.Ecommerce.Core.pdb
+C:\Users\fabian.munoz\source\repos\DeLaSalle.Ecommerce\DeLaSalle.Ecommerce.Core\obj\Debug\net6.0\DeLaSalle.Ecommerce.Core.csproj.AssemblyReference.cache
+C:\Users\fabian.munoz\source\repos\DeLaSalle.Ecommerce\DeLaSalle.Ecommerce.Core\obj\Debug\net6.0\DeLaSalle.Ecommerce.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fabian.munoz\source\repos\DeLaSalle.Ecommerce\DeLaSalle.Ecommerce.Core\obj\Debug\net6.0\DeLaSalle.Ecommerce.Core.AssemblyInfoInputs.cache
+C:\Users\fabian.munoz\source\repos\DeLaSalle.Ecommerce\DeLaSalle.Ecommerce.Core\obj\Debug\net6.0\DeLaSalle.Ecommerce.Core.AssemblyInfo.cs
+C:\Users\fabian.munoz\source\repos\DeLaSalle.Ecommerce\DeLaSalle.Ecommerce.Core\obj\Debug\net6.0\DeLaSalle.Ecommerce.Core.csproj.CoreCompileInputs.cache
+C:\Users\fabian.munoz\source\repos\DeLaSalle.Ecommerce\DeLaSalle.Ecommerce.Core\obj\Debug\net6.0\DeLaSalle.Ecommerce.Core.dll
+C:\Users\fabian.munoz\source\repos\DeLaSalle.Ecommerce\DeLaSalle.Ecommerce.Core\obj\Debug\net6.0\refint\DeLaSalle.Ecommerce.Core.dll
+C:\Users\fabian.munoz\source\repos\DeLaSalle.Ecommerce\DeLaSalle.Ecommerce.Core\obj\Debug\net6.0\DeLaSalle.Ecommerce.Core.pdb
+C:\Users\fabian.munoz\source\repos\DeLaSalle.Ecommerce\DeLaSalle.Ecommerce.Core\obj\Debug\net6.0\ref\DeLaSalle.Ecommerce.Core.dll
