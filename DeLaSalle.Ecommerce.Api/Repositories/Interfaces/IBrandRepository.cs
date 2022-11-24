@@ -1,5 +1,4 @@
-﻿using DeLaSalle.Ecommerce.Core.Dto;
-using DeLaSalle.Ecommerce.Core.Entities;
+﻿using DeLaSalle.Ecommerce.Core.Entities;
 
 namespace DeLaSalle.Ecommerce.Api.Repositories.Interfaces
 {

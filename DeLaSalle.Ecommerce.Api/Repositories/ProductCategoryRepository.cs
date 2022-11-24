@@ -1,6 +1,5 @@
 ﻿using Dapper;
 using Dapper.Contrib.Extensions;
-using DeLaSalle.Ecommerce.Api.DataAccess;
 using DeLaSalle.Ecommerce.Api.DataAccess.Interfaces;
 using DeLaSalle.Ecommerce.Api.Repositories.Interfaces;
 using DeLaSalle.Ecommerce.Core.Entities;

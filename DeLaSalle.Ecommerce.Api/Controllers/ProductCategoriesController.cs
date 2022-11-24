@@ -1,75 +1,76 @@
-﻿using DeLaSalle.Ecommerce.Api.Repositories.Interfaces;
+﻿using DeLaSalle.Ecommerce.Api.Services.Interfaces;
 using DeLaSalle.Ecommerce.Core.Dto;
 using DeLaSalle.Ecommerce.Core.Http;
-using DeLaSalle.Ecommerce.Core.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.ComponentModel;
 
 namespace DeLaSalle.Ecommerce.Api.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class ProductCategoriesController : ControllerBase
     {
-        private IProductCategoryRepository _repository;
+        private IProductCategoryService _service;
 
-        public ProductCategoriesController(IProductCategoryRepository repository)
+        public ProductCategoriesController(IProductCategoryService service)
         {
-            _repository = repository;
+            _service = service;
         }
 
         [HttpGet]
         public async Task<ActionResult<Response<List<ProductCategoryDto>>>> Get()
         {
-            var res = new Response<List<ProductCategoryDto>>();
-            var lista = await _repository.GetAllAsync();
-
-            if (lista.Any())
+            var res = new Response<List<ProductCategoryDto>>()
             {
-                List<ProductCategoryDto> dtos = lista.Select(c => new ProductCategoryDto(c)).ToList();
-                res.Data = dtos;
-
-                return Ok(res);
-            }
-            return NotFound(res);
+                Data = await _service.GetAllAsync()
+            };
+            return Ok(res);
         }
         [HttpGet("{id:int}")]
         public async Task<ActionResult<Response<ProductCategoryDto>>> Get(int id)
         {
             var res = new Response<ProductCategoryDto>();
-            var cat = await _repository.GetById(id);
 
-            ProductCategoryDto dto = new(cat);
-            if (dto != null)
+            if (!await _service.ProductCategoryExists(id))
             {
-                res.Data = dto;
-                return Ok(res);
+                res.Errors.Add("No encontrado");
+                return NotFound(res);
             }
-            return NotFound();
+            res.Data = await _service.GetByIdAsync(id);
+            return Ok(res);
         }
 
         [HttpPost]
         public async Task<ActionResult<Response<ProductCategoryDto>>> Post([FromBody] ProductCategoryDto categoryDto)
         {
-            var res = new Response<ProductCategoryDto>();
-            var cat = new ProductCategory();
-            cat.Name = categoryDto.Name;
-            cat.Description = categoryDto.Description;
-            cat.CreatedBy = "";
-
-            cat = await _repository.SaveAsync(cat);
-            categoryDto.Id = cat.Id;
-            res.Data = categoryDto;
-
-            return CreatedAtAction("Get", new { id = cat.Id }, res);
-
+            var res = new Response<ProductCategoryDto>()
+            {
+                Data = await _service.SaveAsync(categoryDto)
+            };
+            return CreatedAtAction("Get", new { id = res.Data.Id }, res);
         }
         [HttpDelete("{id:int}")]
-        public async Task<ActionResult<Response<bool>>> Delete(int id) {
-            var res = new Response<bool>();
-
-            res.Data = await _repository.DeleteAsync(id);
+        public async Task<ActionResult<Response<bool>>> Delete(int id)
+        {
+            var res = new Response<bool>()
+            {
+                Data = await _service.DeleteAsync(id)
+            };
             return Ok(res);
+        }
+        [HttpPut]
+        public async Task<ActionResult<Response<ProductCategoryDto>>> Put([FromBody] ProductCategoryDto dto)
+        {
+            var response = new Response<ProductCategoryDto>();
+
+            if (!await _service.ProductCategoryExists(dto.Id))
+            {
+                response.Errors.Add("No existe");
+                return NotFound(response);
+            }
+            response.Data = await _service.UpdateAsync(dto);
+            return Ok(response);
         }
     }
 }
